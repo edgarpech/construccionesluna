@@ -21,7 +21,7 @@
           <div class="absolute inset-0 bg-black bg-opacity-80"></div>
   
           <!-- Texto PORTAFOLIO dentro del menú -->
-          <div class="absolute top-15 left-5 z-50 text-white text-sm md:text-xs leading-tight font-semibold uppercase text-left">
+          <div class="absolute top-15 left-5 z-50 text-white text-xs md:text-xs leading-tight font-semibold uppercase text-left">
             <p>PORTAFOLIO DE</p>
             <p>GERARDO BERNAL</p>
             <p>LUNA</p>
@@ -40,7 +40,7 @@
       </transition>
   
       <!-- Menú escritorio -->
-      <div class="hidden md:flex flex-col items-end fixed bottom-15 right-15 text-xs space-y-2 text-black z-50">
+      <div class="hidden md:flex flex-col items-end fixed bottom-15 right-5 text-xs space-y-2 text-black z-50">
         <a href="#about" :class="{ underline: activeSection === 'about' }" class="uppercase font-semibold">Sobre mí</a>
         <a href="#services" :class="{ underline: activeSection === 'services' }" class="uppercase font-semibold">Servicios</a>
         <a href="#projects" :class="{ underline: activeSection === 'projects' }" class="uppercase font-semibold">Proyectos</a>

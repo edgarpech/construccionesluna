@@ -27,8 +27,17 @@ body {
   min-height: 100vh;
 }
 
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 h1 {
-  font-size: 3em;
+  /* font-size: 3em; */
   line-height: 1.1;
 }
 
@@ -46,6 +55,10 @@ button {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+}
+
+#home p, #home h1, #home span {
+  font-family: 'Azeret Mono', monospace;
 }
 
 @media (prefers-color-scheme: light) {
