@@ -1,100 +1,222 @@
 <template>
-  <div class="relative text-black overflow-x-hidden scroll-smooth">
-    <!-- Fondo fijo -->
-    <div class="fixed inset-0 bg-cover bg-center brightness-85 grayscale z-0" style="background-image: url('/images/fondo.jpg');"></div>
+    <div>
+        <!-- Pantalla de carga -->
+        <div v-if="isLoading" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-[9999]">
+            <div id="main-title" class="fixed top-15 left-5 z-50 text-black text-xs md:text-xs leading-tight font-normal uppercase text-left">
+                <p class="tracking-wide">PORTAFOLIO DE</p>
+                <p class="tracking-wide">GERARDO BERNAL</p>
+                <p class="tracking-wide">LUNA</p>
+            </div>
 
-    <!-- Elementos fijos -->
-    <div id="main-title" class="relative md:fixed top-15 left-5 z-50 text-black text-xs md:text-xs leading-tight font-semibold uppercase text-left">
-      <p>PORTAFOLIO DE</p>
-      <p>GERARDO BERNAL</p>
-      <p>LUNA</p>
-    </div>
-
-    <Navigation :activeSection="activeSection" />
-
-    <!-- Contenido scrollable -->
-    <div class="relative z-10 space-y-24">
-      <!-- Sección principal -->
-      <section id="home" ref="home" class="min-h-screen flex flex-col items-center justify-center text-center space-y-20 px-6 md:px-28 lg:px-28 xl:px-36">
-        <p class="text-center text-xl md:text-2xl font-medium text-[#3B3B3B]">PROYECTO, DISEÑO Y <br> CONSTRUCCIÓN</p>
-        <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center text-black">
-          MANTENIMIENTO Y <br>ACABADOS LUNA
-        </h1>
-        <div class="flex flex-col items-end w-full px-6 md:px-16 lg:px-16 xl:px-16 text-[#3B3B3B]">
-          <span class="text-right">INGENIERO</span>
-          <span class="text-right pr-12">ELECTRICISTA</span>
+            <div class="relative flex items-center justify-center">
+                <img src="/images/logos/logo.png" alt="Loading..." class="w-24 animate-pulse" />
+                <svg class="absolute w-36 h-36 transform rotate-[-90deg]" viewBox="0 0 100 100">
+                    <circle class="text-gray-300" stroke="currentColor" stroke-width="4" fill="transparent" r="45" cx="50" cy="50" />
+                    <circle class="text-[#3B3B3B]" :stroke-dasharray="circumference" :stroke-dashoffset="dashOffset" stroke="currentColor" stroke-width="4" fill="transparent" r="45" cx="50" cy="50" stroke-linecap="round" />
+                </svg>
+            </div>
         </div>
-      </section>
 
-      <!-- Sección Sobre mí -->
-      <section id="about" ref="about" class="min-h-screen px-4 md:px-16 text-black">
-        <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
-        <p>...</p>
-      </section>
+        <!-- Contenido principal -->
+        <div v-else :class="{ 'fade-in': !isLoading }" class="relative text-black overflow-x-hidden scroll-smooth">
+            <!-- Fondo fijo -->
+            <div class="fixed inset-0 bg-cover bg-center brightness-85 grayscale z-0" style="background-image: url('/images/fondo.jpg');"></div>
 
-      <!-- Servicios -->
-      <section id="services" ref="services" class="min-h-screen px-4 md:px-16 text-black">
-        <h2 class="text-3xl font-bold mb-4">Servicios</h2>
-        <p>...</p>
-      </section>
+            <!-- Elementos fijos -->
+            <div id="main-title" class="relative md:fixed top-15 left-5 z-50 text-black text-xs md:text-xs leading-tight font-normal uppercase text-left">
+                <p class="tracking-wide">PORTAFOLIO DE</p>
+                <p class="tracking-wide">GERARDO BERNAL</p>
+                <p class="tracking-wide">LUNA</p>
+            </div>
 
-      <!-- Proyectos -->
-      <section id="projects" ref="projects" class="min-h-screen px-4 md:px-16 text-black">
-        <h2 class="text-3xl font-bold mb-4">Proyectos</h2>
-        <p>...</p>
-      </section>
+            <!-- Flecha de scroll -->
+            <div id="arrow" v-if="showArrow" @click="scrollToNextSection" class="fixed bottom-6 left-6 z-50 animate-bounce cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-18 w-18 text-[#3B3B3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v14m7-6l-7 7-7-7" />
+                </svg>
+            </div>
 
-      <!-- Contacto -->
-      <section id="contact" ref="contact" class="min-h-screen px-4 md:px-16 text-black">
-        <h2 class="text-3xl font-bold mb-4">Contacto</h2>
-        <p>...</p>
-      </section>
+            <Navigation :activeSection="activeSection" />
+
+            <!-- Contenido scrollable -->
+            <div class="relative z-10 space-y-24">
+                <section id="home" ref="home" class="min-h-screen flex flex-col items-center justify-center text-center space-y-20 px-6 md:px-28 lg:px-28 xl:px-36">
+                    <p class="text-center text-2xl xl:text-2xl font-medium text-[#3B3B3B]">PROYECTO, DISEÑO Y <br> CONSTRUCCIÓN</p>
+                    <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center text-[#3B3B3B] tracking-wide">
+                        MANTENIMIENTO Y <br>ACABADOS LUNA
+                    </h1>
+                    <div class="flex flex-col items-end w-full px-6 md:px-16 lg:px-16 xl:px-16 text-[#3B3B3B]">
+                        <span class="text-right text-xl tracking-wide">INGENIERO</span>
+                        <span class="text-right text-xl tracking-wide pr-12">ELECTRICISTA</span>
+                    </div>
+                </section>
+
+                <!-- Sección Sobre mí -->
+                <section id="about" ref="about" class="min-h-screen px-4 md:px-16 text-black">
+                    <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+                    <p>...</p>
+                </section>
+
+                <!-- Servicios -->
+                <section id="services" ref="services" class="min-h-screen px-4 md:px-16 text-black">
+                    <h2 class="text-3xl font-bold mb-4">Servicios</h2>
+                    <p>...</p>
+                </section>
+
+                <!-- Proyectos -->
+                <section id="projects" ref="projects" class="min-h-screen px-4 md:px-16 text-black">
+                    <h2 class="text-3xl font-bold mb-4">Proyectos</h2>
+                    <p>...</p>
+                </section>
+
+                <!-- Contacto -->
+                <section id="contact" ref="contact" class="min-h-screen px-4 md:px-16 text-black">
+                    <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+                    <p>...</p>
+                </section>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
-import Navigation from './components/Navigation.vue'
+    import { onMounted, ref, computed } from 'vue';
+    import Navigation from './components/Navigation.vue'
 
-export default {
-  components: {
-    Navigation,
-  },
-  setup() {
-    const activeSection = ref('home')
-    const sections = {
-      home: ref(null),
-      about: ref(null),
-      services: ref(null),
-      projects: ref(null),
-      contact: ref(null),
-    }
+    export default {
+        components: {
+            Navigation,
+        },
+        setup() {
+            const isLoading = ref(true)
+            const showArrow = ref(true)
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY + window.innerHeight / 2
+            const progress = ref(0)
+            const circumference = 2 * Math.PI * 45 // radio 45
+            const dashOffset = computed(() => circumference * (1 - progress.value / 100))
 
-      for (const [key, section] of Object.entries(sections)) {
-        const el = section.value
-        if (el) {
-          const { offsetTop, offsetHeight } = el
-          if (scrollY >= offsetTop && scrollY < offsetTop + offsetHeight) {
-            activeSection.value = key
-            break
-          }
+            onMounted(() => {
+                const interval = setInterval(() => {
+                    if (progress.value < 100) {
+                        progress.value += 2
+                    }
+                }, 100) // cada 100ms sube 2%, en 5 segundos llega a 100%
+
+                setTimeout(() => {
+                    isLoading.value = false
+                    clearInterval(interval)
+                }, 5000) // 5 segundos
+            })
+
+            const activeSection = ref('home')
+            const sections = {
+                home: ref(null),
+                about: ref(null),
+                services: ref(null),
+                projects: ref(null),
+                contact: ref(null),
+            }
+
+            const scrollToNextSection = () => {
+                const aboutSection = sections.about.value
+                if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: 'smooth' })
+                    showArrow.value = false
+                }
+            }
+
+            const handleScroll = () => {
+                const scrollY = window.scrollY
+
+                // Controlar flecha
+                if (scrollY > 100) {
+                    showArrow.value = false
+                } else {
+                    showArrow.value = true
+                }
+
+                // Controlar sección activa
+                const centerScroll = scrollY + window.innerHeight / 2
+                for (const [key, section] of Object.entries(sections)) {
+                    const el = section.value
+                    if (el) {
+                        const { offsetTop, offsetHeight } = el
+                        if (centerScroll >= offsetTop && centerScroll < offsetTop + offsetHeight) {
+                            activeSection.value = key
+                            break
+                        }
+                    }
+                }
+            }
+
+            onMounted(() => {
+                window.addEventListener('scroll', handleScroll)
+            })
+
+            return { ...sections, isLoading, progress, circumference, dashOffset, showArrow, scrollToNextSection, activeSection }
         }
-      }
+    }
+</script>
+
+<style scoped>
+    circle {
+        transition: stroke-dashoffset 0.3s ease;
     }
 
-    onMounted(() => {
-      window.addEventListener('scroll', handleScroll)
-    })
+    .fade-in {
+        animation: fadeInContent 1s ease-in-out;
+    }
 
-    onBeforeUnmount(() => {
-      window.removeEventListener('scroll', handleScroll)
-    })
+    .fade-out {
+        animation: fadeOut 0.5s ease-out forwards;
+    }
 
-    return { ...sections, activeSection }
-  }
-}
-</script>
+    .animate-spin {
+        animation: spin 2s linear infinite;
+    }
+
+    .animate-pulse {
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes fadeInContent {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+</style>
