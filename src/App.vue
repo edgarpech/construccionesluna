@@ -30,8 +30,8 @@
             </div>
 
             <!-- Flecha de scroll -->
-            <div id="arrow" v-if="showArrow" @click="scrollToNextSection" class="fixed bottom-6 left-6 z-50 animate-bounce cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-18 w-18 text-[#3B3B3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div id="arrow" v-if="showArrow" @click="scrollToNextSection" class="fixed bottom-4 left-4 z-50 animate-bounce cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-18 md:w-18 text-[#3B3B3B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v14m7-6l-7 7-7-7" />
                 </svg>
             </div>
@@ -40,14 +40,14 @@
 
             <!-- Contenido scrollable -->
             <div class="relative z-10 space-y-24">
-                <section id="home" ref="home" class="min-h-screen flex flex-col items-center justify-center text-center space-y-20 px-6 md:px-28 lg:px-28 xl:px-36">
-                    <p class="text-center text-2xl xl:text-2xl font-medium text-[#3B3B3B]">PROYECTO, DISEÑO Y <br> CONSTRUCCIÓN</p>
-                    <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center text-[#3B3B3B] tracking-wide">
+                <section id="home" ref="home" class="min-h-screen flex flex-col items-center justify-center text-center space-y-18 px-6 md:px-28 lg:px-28 xl:px-36">
+                    <p class="text-center text-lg md:text-2xl lg:text-2xl xl:text-2xl font-medium text-[#3B3B3B]">PROYECTO, DISEÑO Y <br> CONSTRUCCIÓN</p>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center text-[#3B3B3B] tracking-wide">
                         MANTENIMIENTO Y <br>ACABADOS LUNA
                     </h1>
                     <div class="flex flex-col items-end w-full px-6 md:px-16 lg:px-16 xl:px-16 text-[#3B3B3B]">
-                        <span class="text-right text-xl tracking-wide">INGENIERO</span>
-                        <span class="text-right text-xl tracking-wide pr-12">ELECTRICISTA</span>
+                        <span class="text-right text-lg tracking-wide">INGENIERO</span>
+                        <span class="text-right text-lg tracking-wide pr-12">ELECTRICISTA</span>
                     </div>
                 </section>
 
@@ -98,14 +98,14 @@
             onMounted(() => {
                 const interval = setInterval(() => {
                     if (progress.value < 100) {
-                        progress.value += 2
+                        progress.value += 2.5
                     }
-                }, 100) // cada 100ms sube 2%, en 5 segundos llega a 100%
+                }, 100) // cada 100ms sube 2.5%, en 4 segundos llega a 100%
 
                 setTimeout(() => {
                     isLoading.value = false
                     clearInterval(interval)
-                }, 5000) // 5 segundos
+                }, 4000) // 4 segundos
             })
 
             const activeSection = ref('home')
