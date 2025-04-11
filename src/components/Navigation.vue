@@ -234,11 +234,12 @@ export default {
                 rootMargin: '0px 0px -50% 0px' // Ajustar el área de detección
             });
 
-            // Observar todas las secciones
+            // Observar todas las secciones con un margen superior
             ['about', 'services', 'projects', 'contact'].forEach(id => {
                 const section = document.getElementById(id);
                 if (section) {
                     observer.observe(section);
+                    section.style.scrollMarginTop = '130px'; // Ajustar el margen superior para la detección
                 }
             });
         }
@@ -287,7 +288,7 @@ export default {
     z-index: 10;
 }
 
-#menu-desktop a:hover svg {
+#menu-desktop span:hover svg {
     opacity: 1;
 }
 
