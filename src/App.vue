@@ -88,7 +88,7 @@
                 </section>
 
                 <!-- Servicios -->
-                <section id="services" ref="services" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36">
+                <section id="services" ref="services" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
                     <div class="grid grid-cols-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <!-- Título en la parte superior izquierda -->
                         <div class="text-right">
@@ -103,23 +103,48 @@
                 </section>
 
                 <!-- Proyectos -->
-                <section id="projects" ref="projects" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36">
+                <section id="projects" ref="projects" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
                     <div class="grid grid-cols-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <div class="text-left">
                             <p class="text-xs md:text-xs font-normal mb-10">PROYECTOS / TRABAJOS ELABORADOS</p>
                         </div>
                     </div>
 
-                    <!-- Lista de proyectos -->
+                    <!-- Lista de proyectos alternados -->
                     <div class="space-y-40 px-6 md:px-16 lg:px-30 xl:px-30">
                         <ProjectCard 
                             imageSrc="/images/projects/Alberca/Ampliación alberca.jpeg" 
                             title="ALBERCA HACIENDA DE LAS PALMAS"
+                            projectUrl="/projects/alberca"
+                            :alternate="false"
                         />
                         
                         <ProjectCard 
                             imageSrc="/images/projects/Condominio/Edificio en construccion 3.jpeg" 
                             title="CONDOMINIO SANTA CLARA"
+                            projectUrl="/projects/condominio"
+                            :alternate="true"
+                        />
+
+                        <ProjectCard 
+                            imageSrc="/images/projects/Elevador/Elevador en proceso.jpeg" 
+                            title="ELEVADOR DE EDIFICIO COMERCIAL"
+                            projectUrl="/projects/elevador"
+                            :alternate="false"
+                        />
+                        
+                        <ProjectCard 
+                            imageSrc="/images/projects/Fachada/Edificio 1.jpeg" 
+                            title="FACHADA BOSQUE DE RADIATAS 26"
+                            projectUrl="/projects/fachada"
+                            :alternate="true"
+                        />
+
+                        <ProjectCard 
+                            imageSrc="/images/projects/Muebles/Muebles cocina.jpeg" 
+                            title="MUEBLES BOSQUE DE RADIATAS 26"
+                            projectUrl="/projects/muebles"
+                            :alternate="false"
                         />
                         
                         <!-- Agrega más proyectos según necesites -->
@@ -127,12 +152,46 @@
                 </section>
 
                 <!-- Contacto -->
-                <section id="contact" ref="contact" class="min-h-screen px-4 md:px-16 text-black">
-                    <h2 class="text-3xl font-bold mb-4">Contacto</h2>
-                    <p>...</p>
+                <section id="contact" ref="contact" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36">
+                    <div class="grid grid-cols-1 px-6 md:px-16 lg:px-30 xl:px-30">
+                        <!-- Título en la parte superior izquierda -->
+                        <div class="text-right">
+                            <p class="text-xs md:text-xs font-normal mb-4">CONTÁCTAME</p>
+                        </div>
+                    </div> 
+                    <!-- correo -->
+                    <div class="text-right mt-4 px-6 md:px-16 lg:px-30 xl:px-30">
+                        <a 
+                            href="mailto:Gerardobernalluna@gmail.com" 
+                            target="_blank" 
+                            class="text-xl md:text-2xl lg:text-4xl xl:text-5xl underline font-semibold transition-all duration-300 hover:opacity-70
+                                text-black [text-shadow:_0_0_8px_rgba(0,0,0,0.5)]"
+                        >
+                            Gerardobernalluna@<br>gmail.com
+                        </a>
+                    </div>
+                    <!-- Lista de contacto (icono + texto) en forma de columna (movil, telefono, direccion)-->
+                    <div class="mt-20 space-y-6 px-6 md:px-16 lg:px-30 xl:px-30">
+                        <div class="flex items-center">
+                            <font-awesome-icon icon="mobile-alt" size="xl" class="w-8 h-8 text-black mr-2" />
+                            <p class="text-left text-xs sm:text-sm md:text-base font-normal">55 4276 0904</p>
+                        </div>
+                        <div class="flex items-center">
+                            <font-awesome-icon icon="phone" size="xl" class="w-8 h-8 text-black mr-2" />
+                            <p class="text-left text-xs sm:text-sm md:text-base font-normal">56 4687 9258</p>
+                        </div>
+                        <div class="flex items-center">
+                            <font-awesome-icon icon="map-marker-alt" size="xl" class="w-8 h-8 text-black mr-2 " />
+                            <p class="text-left text-xs sm:text-sm md:text-base font-normal">Calle 25A x 28 y 30 #5, Col. Santa Clara,<br> Dzidzantún, Yucatán.</p>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
+    </div>
+    <!-- Footer con el desarrollador (solo visible al final) -->
+    <div v-if="showDeveloper" class="fixed bottom-0 left-0 z-50 p-4 text-[10px] text-[#3B3B3B] opacity-80 transition-opacity duration-300">
+        Desarrollado por Edgar Pech
     </div>
 </template>
 
@@ -151,6 +210,7 @@
         setup() {
             const isLoading = ref(true)
             const showArrow = ref(true)
+            const showDeveloper = ref(false);
 
             const progress = ref(0)
             const circumference = 2 * Math.PI * 45 // radio 45
@@ -187,14 +247,10 @@
             }
 
             const handleScroll = () => {
-                const scrollY = window.scrollY
+                const scrollY = window.scrollY;
 
                 // Controlar flecha
-                if (scrollY > 50) {
-                    showArrow.value = false
-                } else {
-                    showArrow.value = true
-                }
+                showArrow.value = scrollY <= 50
 
                 // Controlar sección activa
                 const centerScroll = scrollY + window.innerHeight / 2
@@ -204,6 +260,7 @@
                         const { offsetTop, offsetHeight } = el
                         if (centerScroll >= offsetTop && centerScroll < offsetTop + offsetHeight) {
                             activeSection.value = key
+                            showDeveloper.value = (key === 'contact')
                             break
                         }
                     }
@@ -214,7 +271,7 @@
                 window.addEventListener('scroll', handleScroll)
             })
 
-            return { ...sections, isLoading, progress, circumference, dashOffset, showArrow, scrollToNextSection, activeSection }
+            return { ...sections, isLoading, progress, circumference, dashOffset, showArrow, scrollToNextSection, activeSection, showDeveloper }
         }
     }
 </script>
