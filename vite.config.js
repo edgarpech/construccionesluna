@@ -6,8 +6,23 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
     plugins: [vue(), tailwindcss()],
     base: '/', 
-    server: {
-        host: '0.0.0.0',
-        port: 5173,
-    },
+    build: {
+        rollupOptions: {
+            output: {
+            manualChunks: undefined,
+            }
+        },
+        outDir: 'dist',
+        // Agrega esta configuración para generar el 404.html
+        rollupOptions: {
+            input: {
+            main: './index.html',
+            '404': './404.html'
+            }
+        }
+    }
+    // server: {
+    //     host: '0.0.0.0',
+    //     port: 5173,
+    // },
 });
