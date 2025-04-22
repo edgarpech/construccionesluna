@@ -5,6 +5,7 @@ import CondominioPage from '../views/projects/CondominioPage.vue'
 import ElevadorPage from '../views/projects/ElevadorPage.vue'
 import FachadaPage from '../views/projects/FachadaPage.vue'
 import MueblesPage from '../views/projects/MueblesPage.vue'
+import NotFoundPage from '../views/NotFoundPage.vue'
 
 const routes = [
   {
@@ -42,6 +43,12 @@ const routes = [
     name: 'muebles',
     component: MueblesPage,
     meta: { transition: 'slide-up' }
+  },
+  // Ruta para manejar 404
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: NotFoundPage
   }
 ]
 

@@ -6,11 +6,42 @@ import router from './router'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-// Importa los iconos que necesites (ej: sólidos)
-import { faArrowLeft, faMobileAlt, faPhone, faMapMarkerAlt, faCalendar } from '@fortawesome/free-solid-svg-icons';
-
+import { 
+    faBolt,               // Electricidad
+    faFaucet,             // Plomería
+    faBorderStyle,        // Tablaroca
+    faPaintRoller,        // Pasta y pintura
+    faHammer,             // Albañilería
+    faCloudRain,          // Impermeabilizaciones
+    faSnowflake,          // Aire acondicionado
+    faWindowMaximize,     // Ventanería
+    faBorderAll,          // Pisos cerámicos
+    faMobileAlt,          // Celular
+    faPhone,              // Teléfono
+    faMapMarkerAlt,       // Ubicación
+    faCalendar,           // Fecha
+    faHome,               // Casa
+    faArrowLeft,          // Flecha izquierda
+} from '@fortawesome/free-solid-svg-icons';
+  
 // Añade los iconos a la librería
-library.add(faArrowLeft, faMobileAlt, faPhone, faMapMarkerAlt, faCalendar);
+  library.add(
+    faBolt,
+    faFaucet,
+    faBorderStyle,
+    faPaintRoller,
+    faHammer,
+    faCloudRain,
+    faSnowflake,
+    faWindowMaximize,
+    faBorderAll,
+    faMobileAlt,
+    faPhone,
+    faMapMarkerAlt,
+    faCalendar,
+    faHome,
+    faArrowLeft
+);
 
 const app = createApp(App);
 

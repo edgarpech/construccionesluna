@@ -20,7 +20,9 @@
         <!-- Contenido principal -->
         <div v-else :class="{ 'fade-in': !isLoading }" class="relative text-black overflow-x-hidden scroll-smooth">
             <!-- Fondo fijo -->
-            <div class="fixed inset-0 bg-cover bg-center brightness-85 grayscale z-0" style="background-image: url('/images/fondo.jpg');"></div>
+            <div class="fixed inset-0 brightness-85 grayscale z-0 overflow-hidden h-lvh">
+                <img src="/images/fondo.jpg" alt="Fondo" class="w-full h-lvh object-cover" />
+            </div>
 
             <!-- Elementos fijos -->
             <div id="main-title" class="relative md:fixed top-15 left-5 z-50 text-black text-xs md:text-xs leading-tight font-normal uppercase text-left">
@@ -40,7 +42,7 @@
 
             <!-- Contenido scrollable -->
             <div class="relative z-10 space-y-1">
-                <section id="home" ref="home" class="min-h-screen flex flex-col items-center justify-center text-center space-y-18 px-6 md:px-28 lg:px-28 xl:px-36">
+                <section id="home" ref="home" class="min-h-lvh flex flex-col items-center justify-center text-center space-y-18 px-6 md:px-28 lg:px-28 xl:px-36">
                     <p class="text-center text-lg md:text-2xl lg:text-2xl xl:text-2xl font-medium text-[#3B3B3B]">PROYECTO, DISEÑO Y <br> CONSTRUCCIÓN</p>
                     <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center text-[#3B3B3B] tracking-wide">
                         MANTENIMIENTO Y <br>ACABADOS LUNA
@@ -52,7 +54,7 @@
                 </section>
 
                 <!-- Sección Sobre mí -->
-                <section id="about" ref="about" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 mb-28 md:mb-0">
+                <section id="about" ref="about" class="min-h-lvh flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 mb-28 md:mb-0">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <!-- Título en la parte superior izquierda -->
                         <div class="col-span-1 md:col-span-1 text-left">
@@ -88,22 +90,38 @@
                 </section>
 
                 <!-- Servicios -->
-                <section id="services" ref="services" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
+                <section id="services" ref="services" class="min-h-lvh flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
                     <div class="grid grid-cols-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <!-- Título en la parte superior izquierda -->
                         <div class="text-right">
                             <p class="text-xs md:text-xs font-normal mb-4">SERVICIOS</p>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 items-center mt-10 px-6 md:px-16 lg:px-30 xl:px-30 text-justify">
+                    
+                    <!-- Versión Desktop (texto continuo) -->
+                    <div class="hidden md:grid grid-cols-1 items-center mt-10 px-6 md:px-16 lg:px-30 xl:px-30 text-justify">
                         <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-[#3B3B3B] leading-relaxed">
                             ELECTRICIDAD. PLOMERÍA. TABLAROCA EN MUROS Y PLAFONES. PASTA Y PINTURA. ALBAÑILERÍA Y ACABADOS. IMPERMEABILIZACIONES. AIRE ACONDICIONADO. VENTANERÍA EN ALUMINIO. PISOS CERÁMICOS NACIONALES E IMPORTADOS.
                         </h2>
                     </div>
+                    
+                    <!-- Versión Móvil (lista con iconos) -->
+                    <div class="md:hidden mt-10 px-2">
+                        <div class="space-y-4">
+                            <div v-for="(service, index) in ListServices" :key="index" class="flex items-center">
+                                <div class="flex-shrink-0 pt-1 w-8 text-center">
+                                    <font-awesome-icon :icon="service.icon" class="text-[#3B3B3B] text-lg" />
+                                </div>
+                                <span class="text-[#3B3B3B] text-left font-medium text-lg ml-3 leading-tight">
+                                    {{ service.name }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Proyectos -->
-                <section id="projects" ref="projects" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
+                <section id="projects" ref="projects" class="min-h-lvh flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
                     <div class="grid grid-cols-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <div class="text-left">
                             <p class="text-xs md:text-xs font-normal mb-10">PROYECTOS / TRABAJOS ELABORADOS</p>
@@ -146,12 +164,24 @@
                             projectUrl="/projects/muebles"
                             :alternate="true"
                         />
+
+                        <ProjectCard 
+                            imageSrc="/images/projects/enconstruccion.jpg" 
+                            title="HOTEL SANTA CLARA"
+                            :alternate="false"
+                        />
+
+                        <ProjectCard 
+                            imageSrc="/images/projects/enconstruccion.jpg" 
+                            title="CONKAL"
+                            :alternate="true"
+                        />
                         
                     </div>
                 </section>
 
                 <!-- Contacto -->
-                <section id="contact" ref="contact" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36">
+                <section id="contact" ref="contact" class="min-h-lvh flex flex-col px-6 md:px-28 lg:px-28 xl:px-36">
                     <div class="grid grid-cols-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <!-- Título en la parte superior izquierda -->
                         <div class="text-left">
@@ -180,7 +210,7 @@
                             <p class="text-left text-xs sm:text-sm md:text-base font-normal">56 4687 9258</p>
                         </div>
                         <div class="flex items-center">
-                            <font-awesome-icon icon="map-marker-alt" size="xl" class="w-8 h-8 text-black mr-2 " />
+                            <font-awesome-icon icon="home" size="xl" class="w-8 h-8 text-black mr-2 " />
                             <p class="text-left text-xs sm:text-sm md:text-base font-normal">Calle 25A x 28 y 30 #5, Col. Santa Clara,<br> Dzidzantún, Yucatán.</p>
                         </div>
                     </div>
@@ -237,6 +267,18 @@
                 contact: ref(null),
             }
 
+            const ListServices = ref([
+                { name: 'ELECTRICIDAD', icon: 'bolt' },
+                { name: 'PLOMERÍA', icon: 'faucet' },
+                { name: 'TABLAROCA EN MUROS Y PLAFONES', icon: 'border-style' },
+                { name: 'PASTA Y PINTURA', icon: 'paint-roller' },
+                { name: 'ALBAÑILERÍA Y ACABADOS', icon: 'hammer' },
+                { name: 'IMPERMEABILIZACIONES', icon: 'cloud-rain' },
+                { name: 'AIRE ACONDICIONADO', icon: 'snowflake' },
+                { name: 'VENTANERÍA EN ALUMINIO', icon: 'window-maximize' },
+                { name: 'PISOS CERÁMICOS NACIONALES E IMPORTADOS', icon: 'border-all' }
+            ]);
+
             const scrollToNextSection = () => {
                 const aboutSection = sections.about.value
                 if (aboutSection) {
@@ -270,7 +312,17 @@
                 window.addEventListener('scroll', handleScroll)
             })
 
-            return { ...sections, isLoading, progress, circumference, dashOffset, showArrow, scrollToNextSection, activeSection, showDeveloper }
+            return { ...sections, 
+                isLoading, 
+                progress, 
+                circumference, 
+                dashOffset, 
+                showArrow, 
+                scrollToNextSection, 
+                activeSection, 
+                showDeveloper,
+                ListServices,
+            }
         }
     }
 </script>

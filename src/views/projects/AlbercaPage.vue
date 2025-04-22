@@ -1,13 +1,13 @@
 <template>
     <div class="relative text-white overflow-x-hidden scroll-smooth">
         <!-- Fondo fijo con overlay oscuro -->
-        <div class="fixed inset-0 bg-cover bg-center z-0" style="background-image: url('/images/projects/Condominio/Edificio frente.jpeg');">
-            <div class="absolute inset-0 bg-black opacity-85"></div>
+        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Edificio frente.jpeg');">
+            <div class="absolute inset-0 bg-black opacity-85 h-lvh"></div>
         </div>
 
         <!-- Botón "Volver al inicio" -->
         <div @click="$router.push('/')" class="relative md:fixed top-20 left-5 z-50 text-white text-xs leading-tight font-normal uppercase text-left cursor-pointer group">
-            <font-awesome-icon icon="arrow-left" size="xl" class="w-8 h-8 text-white mr-2 transition-all duration-300 group-hover:-translate-x-1" />
+            <font-awesome-icon icon="arrow-left" size="lg" class="w-7 h-7 text-white mr-1 transition-all duration-300 group-hover:-translate-x-1" />
             <span class="transition-all duration-300 group-hover:underline">Volver al inicio</span>
         </div>
 

@@ -84,10 +84,18 @@ export default {
         toggleMenu() {
             this.isOpen = !this.isOpen
             this.togglePortfolioTitle()
+
+            // Bloquear/desbloquear scroll
+            if (this.isOpen) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         },
         closeMenu() {
             this.isOpen = false
             this.togglePortfolioTitle()
+            document.body.style.overflow = ''; // Asegurar que se desbloquee al cerrar
         },
         navigate(target, section) {
             this.closeMenu();
