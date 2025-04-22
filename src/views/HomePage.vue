@@ -52,7 +52,7 @@
                 </section>
 
                 <!-- Sección Sobre mí -->
-                <section id="about" ref="about" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 xl:mb-28">
+                <section id="about" ref="about" class="min-h-screen flex flex-col px-6 md:px-28 lg:px-28 xl:px-36 mb-28 md:mb-0">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-1 px-6 md:px-16 lg:px-30 xl:px-30">
                         <!-- Título en la parte superior izquierda -->
                         <div class="col-span-1 md:col-span-1 text-left">
