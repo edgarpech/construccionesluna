@@ -3,7 +3,8 @@ import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import sitemap from 'vite-plugin-sitemap';
-import prerender from 'vite-plugin-prerender';
+import path from 'path'; // Importa path;
+import { PrerenderSPAPlugin } from 'vite-plugin-prerender';
 
 // Rutas dinámicas para prerender y sitemap
 const dynamicRoutes = [
@@ -18,10 +19,6 @@ const dynamicRoutes = [
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [
-        prerender({
-            staticDir: path.join(__dirname, 'dist'),
-            routes: dynamicRoutes 
-        }),
         vue(), 
         tailwindcss(), 
         sitemap({
@@ -34,6 +31,13 @@ export default defineConfig({
             targets: [
                 { src: './public/_redirects', dest: './' }
             ]
+        }),
+        PrerenderSPAPlugin({
+            staticDir: path.join(__dirname, 'dist'),
+            routes: dynamicRoutes,
+            renderer: new Renderer({
+                renderAfterDocumentEvent: 'render-event'
+            })
         })
     ],
     base: '/', 
