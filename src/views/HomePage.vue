@@ -204,19 +204,41 @@
                     <div class="mt-20 space-y-6 px-6 md:px-16 lg:px-30 xl:px-30">
                         <div class="flex items-start">
                             <font-awesome-icon icon="envelope" size="xl" class="w-8 h-8 text-black mr-4 flex-shrink-0" />
-                            <p class="text-left text-xs sm:text-sm md:text-base font-normal break-words break-all">mantenimientoyacabadosluna@gmail.com</p>
+                            <a 
+                                href="mailto:mantenimientoyacabadosluna@gmail.com"
+                                target="_blank"
+                                class="text-left text-xs sm:text-sm md:text-base font-normal break-words break-all hover:underline"
+                            >
+                                mantenimientoyacabadosluna@gmail.com
+                            </a>
                         </div>
                         <div class="flex items-start">
                             <font-awesome-icon icon="mobile-alt" size="xl" class="w-8 h-8 text-black mr-4 flex-shrink-0" />
-                            <p class="text-left text-xs sm:text-sm md:text-base font-normal break-words">55 4276 0904</p>
+                            <a 
+                                href="tel:5542760904" 
+                                class="text-left text-xs sm:text-sm md:text-base font-normal break-words hover:underline"
+                            >
+                                55 4276 0904
+                            </a>
                         </div>
                         <div class="flex items-start">
                             <font-awesome-icon icon="phone" size="xl" class="w-8 h-8 text-black mr-4 flex-shrink-0" />
-                            <p class="text-left text-xs sm:text-sm md:text-base font-normal break-words">56 4687 9258</p>
+                            <a 
+                                href="tel:5646879258" 
+                                class="text-left text-xs sm:text-sm md:text-base font-normal break-words hover:underline"
+                            >
+                                56 4687 9258
+                            </a>
                         </div>
                         <div class="flex items-start">
                             <font-awesome-icon icon="home" size="xl" class="w-8 h-8 text-black mr-4 flex-shrink-0" />
-                            <p class="text-left text-xs sm:text-sm md:text-base font-normal break-words">Calle 25A x 28 y 30 #5, Col. Santa Clara,<br> Dzidzantún, Yucatán.</p>
+                            <a 
+                                href="https://www.google.com/maps?q=21.243523,-89.049832" 
+                                target="_blank" 
+                                class="text-left text-xs sm:text-sm md:text-base font-normal break-words hover:underline"
+                            >
+                                Calle 25A x 28 y 30 #5, Col. Santa Clara,<br> Dzidzantún, Yucatán.
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -330,6 +352,21 @@
             }
         }
     }
+
+    // if (!localStorage.getItem('cookies-accepted')) {
+    //     const banner = document.createElement('div');
+    //     banner.className = 'fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center z-50';
+    //     banner.innerHTML = `
+    //         <p class="text-sm">Usamos cookies para mejorar tu experiencia. <a href="/politica-cookies" class="underline text-blue-400">Más info</a>.</p>
+    //         <button class="bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded">Aceptar</button>
+    //     `;
+    //     document.body.appendChild(banner);
+
+    //     banner.querySelector('button').addEventListener('click', () => {
+    //         localStorage.setItem('cookies-accepted', 'true');
+    //         banner.remove();
+    //     });
+    // }
 </script>
 
 <style scoped>
