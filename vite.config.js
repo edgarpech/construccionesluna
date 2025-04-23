@@ -31,9 +31,6 @@ export default defineConfig({
             targets: [
                 { src: './public/_redirects', dest: './' }
             ]
-        }),
-        purgecss({
-            content: ['**/*.html', '**/*.vue', '**/*.jsx']
         })
     ],
     base: '/', 
