@@ -19,11 +19,31 @@
             <h3 class="text-lg font-medium text-black">
                 {{ title }}
             </h3>
+            <!-- indicador móvil dinámico -->
+            <div v-if="isMobileView && hasProjectUrl" class="flex items-center justify-center mt-2 animate-bounce">
+                <span class="text-sm font-medium text-gray-700 mr-1">
+                    Toca para ver detalles
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+            </div>
+            <!-- si es movil pero no hay url, colocar PROXIMAMENTE -->
+            <div v-else-if="isMobileView && !hasProjectUrl" class="flex items-center justify-center mt-2">
+                <span class="text-sm font-medium text-gray-700">
+                    PRÓXIMAMENTE
+                </span>
+            </div>
         </div>
 
         <!-- Contenedor de imagen (fondo) -->
         <div 
             class="md:w-1/2 h-[180px] md:h-[220px] relative overflow-hidden group"
+            :class="{
+                'shadow-md': isMobileView,
+                'hover:shadow-lg': !isMobileView && hasProjectUrl
+            }"
         >
             <!-- Imagen base con efecto de hover -->
             <img 
@@ -31,6 +51,7 @@
                 class="w-full h-full object-cover transition-all duration-300"
                 :class="{
                     'grayscale group-hover:grayscale-0': !isMobileDevice,
+                    'grayscale': !hasProjectUrl
                 }"
                 :alt="title"
                 style="object-position: center center;" 
@@ -55,7 +76,7 @@
                     'md:pl-10 md:-ml-32 text-left': alternate
                 }"
             >
-                <h3 class="text-2xl md:text-4xl font-medium text-white [text-shadow:_0_0_8px_rgba(0,0,0,0.8)]">
+                <h3 class="text-2xl md:text-4xl font-medium text-black [text-shadow:_0_0_8px_rgba(255,255,255,0.8)]">
                     {{ title }}
                 </h3>
                 <div class="h-10 overflow-hidden" :class="{
@@ -69,14 +90,14 @@
                         'justify-start': alternate
                     }">
                         <span class="relative inline-block">
-                            <span class="text-white font-medium tracking-wide relative z-10">
+                            <span class="text-black font-extrabold tracking-wide relative z-10">
                                 {{ hasProjectUrl ? 'VER DETALLES' : 'PRÓXIMAMENTE' }}
                             </span>
-                            <span class="absolute inset-0 text-transparent" style="text-shadow: 0 0 8px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.9);">
+                            <span class="absolute inset-0 text-transparent font-extrabold">
                                 {{ hasProjectUrl ? 'VER DETALLES' : 'PRÓXIMAMENTE' }}
                             </span>
                         </span>
-                        <svg v-if="hasProjectUrl" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.7));">
+                        <svg v-if="hasProjectUrl" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="filter: drop-shadow(0 0 2px rgba(0,0,0,0.7));">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
@@ -179,6 +200,18 @@ img {
 @media (min-width: 768px) {
     .md\:h-\[220px\] {
         height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cursor-pointer:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+        transition: transform 0.1s ease, opacity 0.1s ease;
+    }
+    
+    .cursor-pointer {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
     }
 }
 

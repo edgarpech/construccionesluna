@@ -15,31 +15,31 @@ const routes = [
     meta: { transition: 'fade' }
   },
   {
-    path: '/projects/alberca',
+    path: '/proyectos/alberca',
     name: 'alberca',
     component: AlbercaPage,
     meta: { transition: 'slide-up' }
   },
   {
-    path: '/projects/condominio',
+    path: '/proyectos/condominio',
     name: 'condominio',
     component: CondominioPage,
     meta: { transition: 'slide-up' }
   },
   {
-    path: '/projects/elevador',
+    path: '/proyectos/elevador',
     name: 'elevador',
     component: ElevadorPage,
     meta: { transition: 'slide-up' }
   },
   {
-    path: '/projects/fachada',
+    path: '/proyectos/fachada',
     name: 'fachada',
     component: FachadaPage,
     meta: { transition: 'slide-up' }
   },
   {
-    path: '/projects/muebles',
+    path: '/proyectos/muebles',
     name: 'muebles',
     component: MueblesPage,
     meta: { transition: 'slide-up' }

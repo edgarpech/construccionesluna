@@ -103,7 +103,6 @@ export default {
         return {
             currentIndex: 0,
             galleryImages: [
-                '/images/projects/Elevador/Elevador.jpeg',
                 '/images/projects/Elevador/Elevador trabajadores.jpeg',
                 '/images/projects/Elevador/Elevador en proceso.jpeg',
                 '/images/projects/Elevador/Elevador 1.jpeg',

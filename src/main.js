@@ -22,6 +22,7 @@ import {
     faCalendar,           // Fecha
     faHome,               // Casa
     faArrowLeft,          // Flecha izquierda
+    faEnvelope,           // Correo electrónico
 } from '@fortawesome/free-solid-svg-icons';
   
 // Añade los iconos a la librería
@@ -40,7 +41,8 @@ import {
     faMapMarkerAlt,
     faCalendar,
     faHome,
-    faArrowLeft
+    faArrowLeft,
+    faEnvelope
 );
 
 const app = createApp(App);
