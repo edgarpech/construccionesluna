@@ -3,8 +3,9 @@ import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import sitemap from 'vite-plugin-sitemap';
+import prerender from 'vite-plugin-prerender';
 
-// Define tus rutas dinámicas (ajusta según tu proyecto)
+// Rutas dinámicas para prerender y sitemap
 const dynamicRoutes = [
     '/',
     '/proyectos/alberca',
@@ -17,6 +18,10 @@ const dynamicRoutes = [
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [
+        prerender({
+            staticDir: path.join(__dirname, 'dist'),
+            routes: dynamicRoutes 
+        }),
         vue(), 
         tailwindcss(), 
         sitemap({
@@ -27,7 +32,7 @@ export default defineConfig({
         }),
         viteStaticCopy({
             targets: [
-                { src: './public/_redirects', dest: './' } // Para Netlify
+                { src: './public/_redirects', dest: './' }
             ]
         })
     ],

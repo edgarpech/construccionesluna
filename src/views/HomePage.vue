@@ -233,7 +233,7 @@
                         <div class="flex items-start">
                             <font-awesome-icon icon="home" size="xl" class="w-8 h-8 text-black mr-4 flex-shrink-0" />
                             <a 
-                                href="https://www.google.com/maps?q=21.243523,-89.049832" 
+                                href="https://www.google.com/maps?q=21.242862,-89.050202" 
                                 target="_blank" 
                                 class="text-left text-xs sm:text-sm md:text-base font-normal break-words hover:underline"
                             >

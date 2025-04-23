@@ -17,6 +17,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "gsap": "^3.12.7",
     "jquery": "^3.7.1",
+    "vite-plugin-prerender": "^1.0.8",
     "vivus": "^0.4.6",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
