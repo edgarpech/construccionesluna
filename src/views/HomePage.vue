@@ -194,9 +194,10 @@
                             href="mailto:Gerardobernalluna@gmail.com" 
                             target="_blank" 
                             class="text-xl md:text-2xl lg:text-4xl xl:text-5xl underline font-medium transition-all duration-300 hover:opacity-70
-                                text-black [text-shadow:_0_0_8px_rgba(0,0,0,0.5)]"
+                                text-black [text-shadow:_0_0_8px_rgba(0,0,0,0.5)] whitespace-pre-line"
                         >
-                            Gerardobernalluna@<br>gmail.com
+                            Gerardobernalluna@
+                            <span class="block">gmail.com</span>
                         </a>
                     </div>
                     <!-- Lista de contacto (icono + texto) en forma de columna (movil, telefono, direccion)-->
