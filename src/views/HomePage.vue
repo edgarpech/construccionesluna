@@ -9,7 +9,7 @@
             </div>
 
             <div class="relative flex items-center justify-center">
-                <img src="/images/logos/logo.png" alt="Loading..." class="w-24 animate-pulse" />
+                <img loading="lazy" src="/images/logos/logo.png" alt="Loading..." class="w-24 animate-pulse" />
                 <svg class="absolute w-36 h-36 transform rotate-[-90deg]" viewBox="0 0 100 100">
                     <circle class="text-gray-300" stroke="currentColor" stroke-width="4" fill="transparent" r="45" cx="50" cy="50" />
                     <circle class="text-[#333333]" :stroke-dasharray="circumference" :stroke-dashoffset="dashOffset" stroke="currentColor" stroke-width="4" fill="transparent" r="45" cx="50" cy="50" stroke-linecap="round" />

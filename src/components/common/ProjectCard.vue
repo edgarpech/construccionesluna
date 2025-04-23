@@ -46,7 +46,7 @@
             }"
         >
             <!-- Imagen base con efecto de hover -->
-            <img 
+            <img loading="lazy"
                 :src="imageSrc" 
                 class="w-full h-full object-cover transition-all duration-300"
                 :class="{

@@ -1,7 +1,7 @@
 <template>
     <div ref="container" class="relative inline-block overflow-hidden" v-if="!isMobile" @mousemove="handleMouseMove" @mouseleave="hideMagnifier">
         <!-- Imagen en escala de grises de fondo -->
-        <img :src="imageSrc" class="block w-full h-auto grayscale transition-all duration-100" alt="Logo" />
+        <img loading="lazy" :src="imageSrc" class="block w-full h-auto grayscale transition-all duration-100" alt="Logo" />
 
         <!-- Efecto de revelado con forma orgánica -->
         <div class="absolute inset-0 pointer-events-none mix-blend-normal" v-show="show" :style="{
@@ -10,7 +10,7 @@
             maskRepeat: 'no-repeat',
             WebkitMaskRepeat: 'no-repeat'
         }">
-            <img :src="imageSrc" class="w-full h-auto" :style="{
+            <img loading="lazy" :src="imageSrc" class="w-full h-auto" :style="{
                 filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.3))',
                 clipPath: cloudPath,
                 WebkitClipPath: cloudPath
@@ -19,7 +19,7 @@
     </div>
     <div v-else>
         <!-- Mostrar la imagen en color directamente en dispositivos móviles -->
-        <img :src="imageSrc" class="block w-full h-auto" alt="Logo" />
+        <img loading="lazy" :src="imageSrc" class="block w-full h-auto" alt="Logo" />
     </div>
 </template>
 
