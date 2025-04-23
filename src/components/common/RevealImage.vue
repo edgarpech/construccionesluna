@@ -26,7 +26,7 @@
 <script setup>
     import { ref, computed, onMounted } from 'vue';
 
-    const imageSrc = '/images/logos/logo.png';
+    const imageSrc = '/images/logos/logo.webp';
 
     const show = ref(false);
     const mouseX = ref(0);

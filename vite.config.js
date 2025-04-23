@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import sitemap from 'vite-plugin-sitemap';
 import path from 'path';
+import purgecss from 'vite-plugin-purgecss';
 
 // Rutas dinámicas para prerender y sitemap
 const dynamicRoutes = [
@@ -30,6 +31,9 @@ export default defineConfig({
             targets: [
                 { src: './public/_redirects', dest: './' }
             ]
+        }),
+        purgecss({
+            content: ['**/*.html', '**/*.vue', '**/*.jsx']
         })
     ],
     base: '/', 
