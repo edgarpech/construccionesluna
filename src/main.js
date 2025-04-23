@@ -52,4 +52,3 @@ app.component('font-awesome-icon', FontAwesomeIcon);
 
 app.use(router);
 app.mount('#app');
-document.dispatchEvent(new Event('render-event'));
