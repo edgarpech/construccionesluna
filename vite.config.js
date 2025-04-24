@@ -6,7 +6,6 @@ import sitemap from 'vite-plugin-sitemap';
 
 // Rutas dinámicas para prerender y sitemap
 const dynamicRoutes = [
-    '/',
     '/proyectos/alberca',
     '/proyectos/condominio',
     '/proyectos/elevador',
@@ -24,19 +23,6 @@ export default defineConfig({
             dynamicRoutes,
             changefreq: 'weekly',
             priority: 0.8,
-            // Generar automáticamente etiquetas <image:image>
-            transform(route, config) {
-                if (route.img) {
-                    return {
-                        ...route,
-                        images: route.img.map(image => ({
-                            loc: image.loc,
-                            title: image.title,
-                        })),
-                    };
-                }
-                return route;
-            },
         }),
         viteStaticCopy({
             targets: [
