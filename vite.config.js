@@ -3,8 +3,6 @@ import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import sitemap from 'vite-plugin-sitemap';
-import path from 'path';
-import purgecss from 'vite-plugin-purgecss';
 
 // Rutas dinámicas para prerender y sitemap
 const dynamicRoutes = [
@@ -26,17 +24,19 @@ export default defineConfig({
             dynamicRoutes,
             changefreq: 'weekly',
             priority: 0.8,
-            routes: [
-                {
-                    url: '/',  // Página principal
-                    img: [
-                        { url: '/images/logos/logoFondo.png', title: 'Logo Construcciones Luna' },
-                        { url: '/images/logos/logo.webp', alt: 'Favicon' },
-                        { url: '/images/logos/logo.png', alt: 'Logo' },
-                        { url: '/images/logos/logo.ico', alt: 'Logo' },
-                    ],
-                },
-            ],
+            // Generar automáticamente etiquetas <image:image>
+            transform(route, config) {
+                if (route.img) {
+                    return {
+                        ...route,
+                        images: route.img.map(image => ({
+                            loc: image.loc,
+                            title: image.title,
+                        })),
+                    };
+                }
+                return route;
+            },
         }),
         viteStaticCopy({
             targets: [
@@ -44,7 +44,6 @@ export default defineConfig({
             ]
         })
     ],
-    base: '/', 
     server: {
         host: '0.0.0.0',
         port: 5173,
