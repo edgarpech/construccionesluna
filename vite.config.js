@@ -25,7 +25,18 @@ export default defineConfig({
             hostname: 'https://construccionesluna.com.mx',
             dynamicRoutes,
             changefreq: 'weekly',
-            priority: 0.8
+            priority: 0.8,
+            routes: [
+                {
+                    url: '/',  // Página principal
+                    img: [
+                        { url: '/images/logos/logoFondo.png', title: 'Logo Construcciones Luna' },
+                        { url: '/images/logos/logo.webp', alt: 'Favicon' },
+                        { url: '/images/logos/logo.png', alt: 'Logo' },
+                        { url: '/images/logos/logo.ico', alt: 'Logo' },
+                    ],
+                },
+            ],
         }),
         viteStaticCopy({
             targets: [
