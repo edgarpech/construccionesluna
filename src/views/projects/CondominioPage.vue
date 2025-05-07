@@ -1,7 +1,7 @@
 <template>
     <div class="relative text-white overflow-x-hidden scroll-smooth">
         <!-- Fondo fijo con overlay oscuro -->
-        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Edificio frente.jpeg');">
+        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Edificio frente.webp');">
             <div class="absolute inset-0 bg-black opacity-85 h-lvh"></div>
         </div>
 
@@ -103,14 +103,14 @@ export default {
         return {
             currentIndex: 0,
             galleryImages: [
-                '/images/projects/Condominio/Edificio.jpeg',
-                '/images/projects/Condominio/Edificio trabajadores.jpeg',
-                '/images/projects/Condominio/Edificio en construccion 3.jpeg',
-                '/images/projects/Condominio/Edificio en construccion 2.jpeg',
-                '/images/projects/Condominio/Edificio en construccion.jpeg',
-                '/images/projects/Condominio/Departamento interior.jpeg',
-                '/images/projects/Condominio/Edificio vista.jpeg',
-                '/images/projects/Condominio/Edificio frente.jpeg',
+                '/images/projects/Condominio/Edificio.webp',
+                '/images/projects/Condominio/Edificio trabajadores.webp',
+                '/images/projects/Condominio/Edificio en construccion 3.webp',
+                '/images/projects/Condominio/Edificio en construccion 2.webp',
+                '/images/projects/Condominio/Edificio en construccion.webp',
+                '/images/projects/Condominio/Departamento interior.webp',
+                '/images/projects/Condominio/Edificio vista.webp',
+                '/images/projects/Condominio/Edificio frente.webp',
             ]
         }
     },

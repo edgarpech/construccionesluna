@@ -1,7 +1,7 @@
 <template>
     <div ref="container" class="relative inline-block overflow-hidden" v-if="!isMobile" @mousemove="handleMouseMove" @mouseleave="hideMagnifier">
         <!-- Imagen en escala de grises de fondo -->
-        <img loading="lazy" :src="imageSrc" class="block w-full h-auto grayscale transition-all duration-100" alt="Logo" />
+        <img loading="lazy" :src="imageSrc" class="block w-full h-auto grayscale transition-all duration-100" alt="Logo" width="300" height="150" />
 
         <!-- Efecto de revelado con forma orgánica -->
         <div class="absolute inset-0 pointer-events-none mix-blend-normal" v-show="show" :style="{
@@ -19,7 +19,7 @@
     </div>
     <div v-else>
         <!-- Mostrar la imagen en color directamente en dispositivos móviles -->
-        <img loading="lazy" :src="imageSrc" class="block w-full h-auto" alt="Logo" />
+        <img loading="lazy" :src="imageSrc" class="block w-full h-auto" alt="Logo" width="300" height="150" />
     </div>
 </template>
 

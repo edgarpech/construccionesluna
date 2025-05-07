@@ -1,7 +1,7 @@
 <template>
     <div class="relative text-white overflow-x-hidden scroll-smooth">
         <!-- Fondo fijo con overlay oscuro -->
-        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Edificio frente.jpeg');">
+        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Edificio frente.webp');">
             <div class="absolute inset-0 bg-black opacity-85 h-lvh"></div>
         </div>
 
@@ -103,10 +103,10 @@ export default {
         return {
             currentIndex: 0,
             galleryImages: [
-                '/images/projects/Elevador/Elevador trabajadores.jpeg',
-                '/images/projects/Elevador/Elevador en proceso.jpeg',
-                '/images/projects/Elevador/Elevador 1.jpeg',
-                '/images/projects/Elevador/Elevador 2.jpeg',
+                '/images/projects/Elevador/Elevador trabajadores.webp',
+                '/images/projects/Elevador/Elevador en proceso.webp',
+                '/images/projects/Elevador/Elevador 1.webp',
+                '/images/projects/Elevador/Elevador 2.webp',
             ]
         }
     },

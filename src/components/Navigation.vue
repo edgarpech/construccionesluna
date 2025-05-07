@@ -3,13 +3,13 @@
         <!-- Botón de menú (móvil) -->
         <button @click="toggleMenu" class="md:hidden fixed top-11 right-5 z-50 focus:outline-none">
             <img alt="menu icon" class="w-10 h-10 transition-transform duration-300 transform"
-            :src="isOpen ? '/images/icons/close.png' : '/images/icons/menubar.png'"
+            :src="isOpen ? '/images/icons/close.webp' : '/images/icons/menubar.webp'"
             :class="{ 'rotate-90': isOpen }"/>
         </button>
   
         <!-- Menú móvil desplegable -->
         <transition name="fade">
-            <div class="fixed inset-0 z-40 bg-cover bg-center" style="background-image: url('/images/fondo.jpg');" v-show="isOpen">
+            <div class="fixed inset-0 z-40 bg-cover bg-center" style="background-image: url('/images/fondo.webp');" v-show="isOpen">
                 <!-- Overlay oscuro -->
                 <div class="absolute inset-0 bg-black bg-opacity-80"></div>
     
@@ -22,35 +22,35 @@
     
                 <!-- Enlaces del menú -->
                 <ul id="menu-mobile" class="relative h-full flex flex-col items-center justify-center space-y-6 text-white text-4xl md:text-5xl uppercase z-50">
-                    <li><a @click="navigate('#about', 'about')" :class="{ underline: activeSection === 'about' }" class="uppercase font-normal">Sobre mí</a></li>
-                    <li><a @click="navigate('#services', 'services')" :class="{ underline: activeSection === 'services' }" class="uppercase font-normal">Servicios</a></li>
-                    <li><a @click="navigate('#projects', 'projects')" :class="{ underline: activeSection === 'projects' }" class="uppercase font-normal">Proyectos</a></li>
-                    <li><a @click="navigate('#contact', 'contact')" :class="{ underline: activeSection === 'contact' }" class="uppercase font-normal">Contacto</a></li>
+                    <li><a href="#about" @click.prevent="navigate('#about', 'about')" :class="{ underline: activeSection === 'about' }" class="uppercase font-normal">Sobre mí</a></li>
+                    <li><a href="#services" @click.prevent="navigate('#services', 'services')" :class="{ underline: activeSection === 'services' }" class="uppercase font-normal">Servicios</a></li>
+                    <li><a href="#projects" @click.prevent="navigate('#projects', 'projects')" :class="{ underline: activeSection === 'projects' }" class="uppercase font-normal">Proyectos</a></li>
+                    <li><a href="#contact" @click.prevent="navigate('#contact', 'contact')" :class="{ underline: activeSection === 'contact' }" class="uppercase font-normal">Contacto</a></li>
                 </ul>
             </div>
         </transition>
   
         <!-- Menú escritorio -->
         <div class="hidden md:flex flex-col items-end fixed bottom-15 right-5 text-xs space-y-4 text-black z-50" id="menu-desktop">
-            <a @click="navigate('#about', 'about')" id="about-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'about' }">
+            <a href="#about" @click.prevent="navigate('#about', 'about')" id="about-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'about' }">
                 <span @mouseover="handleHover('about')" @mouseleave="handleHoverLeave('about')" class="relative z-10">Sobre mí</span>
                 <svg id="circle" :viewBox="getViewBox('Sobre mí')" xmlns="http://www.w3.org/2000/svg" :width="getWidth('Sobre mí')" height="35" class="absolute left-0 top-1/2 transform -translate-y-1/2">
                     <path :d="getPath('Sobre mí')" fill="transparent" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a @click="navigate('#services', 'services')" id="services-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'services' }">
+            <a href="#services" @click.prevent="navigate('#services', 'services')" id="services-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'services' }">
                 <span @mouseover="handleHover('services')" @mouseleave="handleHoverLeave('services')" class="relative z-10">Servicios</span>
                 <svg id="circle2" :viewBox="getViewBox('Servicios')" xmlns="http://www.w3.org/2000/svg" :width="getWidth('Servicios')" height="35" class="absolute left-0 top-1/2 transform -translate-y-1/2">
                     <path :d="getPath('Servicios')" fill="transparent" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a @click="navigate('#projects', 'projects')" id="projects-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'projects' }">
+            <a href="#projects" @click.prevent="navigate('#projects', 'projects')" id="projects-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'projects' }">
                 <span @mouseover="handleHover('projects')" @mouseleave="handleHoverLeave('projects')" class="relative z-10">Proyectos</span>
                 <svg id="circle3" :viewBox="getViewBox('Proyectos')" xmlns="http://www.w3.org/2000/svg" :width="getWidth('Proyectos')" height="35" class="absolute left-0 top-1/2 transform -translate-y-1/2">
                     <path :d="getPath('Proyectos')" fill="transparent" stroke="black" stroke-width="2"/>
                 </svg>
             </a>
-            <a @click="navigate('#contact', 'contact')" id="contact-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'contact' }">
+            <a href="#contact" @click.prevent="navigate('#contact', 'contact')" id="contact-link" class="uppercase font-normal relative inline-block" :class="{ 'active': activeSection === 'contact' }">
                 <span @mouseover="handleHover('contact')" @mouseleave="handleHoverLeave('contact')" class="relative z-10">Contacto</span>
                 <svg id="circle4" :viewBox="getViewBox('Contacto')" xmlns="http://www.w3.org/2000/svg" :width="getWidth('Contacto')" height="35" class="absolute left-0 top-1/2 transform -translate-y-1/2">
                     <path :d="getPath('Contacto')" fill="transparent" stroke="black" stroke-width="2"/>

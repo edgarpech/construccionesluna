@@ -21,7 +21,7 @@
         <div v-else :class="{ 'fade-in': !isLoading }" class="relative text-black overflow-x-hidden scroll-smooth">
             <!-- Fondo fijo -->
             <div class="fixed inset-0 brightness-70 z-0 overflow-hidden h-lvh">
-                <img src="/images/fondo.jpg" alt="Fondo" class="w-full h-lvh object-cover" />
+                <img src="/images/fondo.webp" alt="Fondo" class="w-full h-lvh object-cover" />
             </div>
 
             <!-- Elementos fijos -->
@@ -131,48 +131,48 @@
                     <!-- Lista de proyectos alternados -->
                     <div class="space-y-40 px-6 md:px-16 lg:px-30 xl:px-30">
                         <ProjectCard 
-                            imageSrc="/images/projects/Alberca/Ampliación alberca.jpeg" 
+                            imageSrc="/images/projects/Alberca/Ampliación alberca.webp" 
                             title="ALBERCA HACIENDA DE LAS PALMAS"
                             projectUrl="/proyectos/alberca"
                             :alternate="true"
                         />
                         
                         <ProjectCard 
-                            imageSrc="/images/projects/Condominio/Edificio en construccion 3.jpeg" 
+                            imageSrc="/images/projects/Condominio/Edificio en construccion 3.webp" 
                             title="CONDOMINIO SANTA CLARA"
                             projectUrl="/proyectos/condominio"
                             :alternate="false"
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Elevador/Elevador en proceso.jpeg" 
+                            imageSrc="/images/projects/Elevador/Elevador en proceso.webp" 
                             title="ELEVADOR DE EDIFICIO COMERCIAL"
                             projectUrl="/proyectos/elevador"
                             :alternate="true"
                         />
                         
                         <ProjectCard 
-                            imageSrc="/images/projects/Fachada/Edificio 1.jpeg" 
+                            imageSrc="/images/projects/Fachada/Edificio 1.webp" 
                             title="FACHADA BOSQUE DE RADIATAS 26"
                             projectUrl="/proyectos/fachada"
                             :alternate="false"
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Muebles/Muebles cocina.jpeg" 
+                            imageSrc="/images/projects/Muebles/Muebles cocina.webp" 
                             title="MUEBLES BOSQUE DE RADIATAS 26"
                             projectUrl="/proyectos/muebles"
                             :alternate="true"
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Hotel/enconstruccion.jpg" 
+                            imageSrc="/images/projects/Hotel/enconstruccion.webp" 
                             title="HOTEL SANTA CLARA"
                             :alternate="false"
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Conkal/enconstruccion.jpg" 
+                            imageSrc="/images/projects/Conkal/enconstruccion.webp" 
                             title="CONKAL"
                             :alternate="true"
                         />
