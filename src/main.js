@@ -46,6 +46,7 @@ import {
 );
 
 const app = createApp(App);
+app.config.performance = true // Habilita métricas de rendimiento
 
 // Registra el componente globalmente
 app.component('font-awesome-icon', FontAwesomeIcon);

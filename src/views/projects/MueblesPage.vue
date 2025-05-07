@@ -52,7 +52,7 @@
                 <div class="relative w-full h-96 md:h-[500px] mt-16 overflow-hidden group">
                     <div class="absolute inset-0 flex transition-transform duration-500 ease-out" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
                         <div v-for="(image, index) in galleryImages" :key="index" class="w-full h-full flex-shrink-0">
-                            <img :src="image" class="w-full h-full object-contain" alt="Imagen del proyecto">
+                            <img loading="lazy" :src="image" class="w-full h-full object-contain" alt="Imagen del proyecto">
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@
                             'border-white scale-105': currentIndex === index,
                             'border-transparent opacity-80 hover:opacity-100': currentIndex !== index
                         }">
-                        <img :src="image" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" alt="Miniatura">
+                        <img loading="lazy" :src="image" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" alt="Miniatura">
                         <div v-if="currentIndex === index" class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
                             <div class="w-3 h-3 bg-white rounded-full"></div>
                         </div>
