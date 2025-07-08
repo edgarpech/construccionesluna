@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router'
+import VueLazyload from 'vue-lazyload'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -47,6 +48,11 @@ import {
 
 const app = createApp(App);
 app.config.performance = true // Habilita métricas de rendimiento
+
+app.use(VueLazyload, {
+  loading: '/images/loading.gif',
+  error: '/images/error.png'
+})
 
 // Registra el componente globalmente
 app.component('font-awesome-icon', FontAwesomeIcon);

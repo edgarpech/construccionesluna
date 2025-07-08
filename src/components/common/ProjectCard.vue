@@ -47,7 +47,7 @@
         >
             <!-- Imagen base con efecto de hover -->
             <img loading="lazy"
-                :src="imageSrc" 
+                v-lazy="imageSrc" 
                 class="w-full h-full object-cover transition-all duration-300"
                 :class="{
                     'grayscale group-hover:grayscale-0': !isMobileDevice,
