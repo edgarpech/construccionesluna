@@ -35,6 +35,7 @@ export default defineConfig({
         port: 5173,
     },
     build: {
+        minify: true, // Minificación activada
         outDir: 'dist',
         rollupOptions: {
             output: {
