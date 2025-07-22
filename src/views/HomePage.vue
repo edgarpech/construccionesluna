@@ -24,7 +24,7 @@
                 <img
                     alt="Fondo"
                     class="w-full h-lvh object-cover"
-                    loading="lazy"
+                    loading="eager"
                     src="/images/fondo-768.webp"
                     srcset="
                         /images/fondo-480.webp 480w,
