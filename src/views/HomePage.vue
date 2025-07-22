@@ -21,7 +21,19 @@
         <div v-else :class="{ 'fade-in': !isLoading }" class="relative text-black overflow-x-hidden scroll-smooth">
             <!-- Fondo fijo -->
             <div class="fixed inset-0 brightness-70 z-0 overflow-hidden h-lvh">
-                <img v-lazy="'/images/fondo.webp'" alt="Fondo" class="w-full h-lvh object-cover" />
+                <img
+                    alt="Fondo"
+                    class="w-full h-lvh object-cover"
+                    loading="lazy"
+                    src="/images/fondo-768.webp"
+                    srcset="
+                        /images/fondo-480.webp 480w,
+                        /images/fondo-768.webp 768w,
+                        /images/fondo-1024.webp 1024w,
+                        /images/fondo.webp 1920w
+                    "
+                    sizes="100vw"
+                    />
             </div>
 
             <!-- Elementos fijos -->

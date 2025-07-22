@@ -16,9 +16,9 @@
             v-if="isMobileView" 
             class="w-full px-0 md:px-6 text-center mb-4"
         >
-            <h3 class="text-lg font-medium text-black">
+            <h2 class="text-lg font-medium text-black">
                 {{ title }}
-            </h3>
+            </h2>
             <!-- indicador móvil dinámico -->
             <div v-if="isMobileView && hasProjectUrl" class="flex items-center justify-center mt-2 animate-bounce">
                 <span class="text-sm font-medium text-gray-700 mr-1">
@@ -76,9 +76,9 @@
                     'md:pl-10 md:-ml-32 text-left': alternate
                 }"
             >
-                <h3 class="text-2xl md:text-4xl font-medium text-black [text-shadow:_0_0_8px_rgba(255,255,255,0.8)]">
+                <h2 class="text-2xl md:text-4xl font-medium text-black [text-shadow:_0_0_8px_rgba(255,255,255,0.8)]">
                     {{ title }}
-                </h3>
+                </h2>
                 <div class="h-10 overflow-hidden" :class="{
                     'text-right': !alternate, 
                     'text-left': alternate
