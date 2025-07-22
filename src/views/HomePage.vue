@@ -25,14 +25,14 @@
                     alt="Fondo"
                     class="w-full h-lvh object-cover"
                     loading="eager"
-                    src="/images/fondo-768.webp"
+                    src="/images/fondo-1024.webp"
                     srcset="
                         /images/fondo-480.webp 480w,
                         /images/fondo-768.webp 768w,
                         /images/fondo-1024.webp 1024w,
-                        /images/fondo.webp 1920w
+                        /images/fondo-1920.webp 1920w
                     "
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, (min-width: 769px) 1024px"
                     />
             </div>
 
