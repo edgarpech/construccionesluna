@@ -29,8 +29,7 @@
                     srcset="
                         /images/fondo-480.webp 480w,
                         /images/fondo-768.webp 768w,
-                        /images/fondo-1024.webp 1024w,
-                        /images/fondo-1920.webp 1920w
+                        /images/fondo-1024.webp 1024w
                     "
                     sizes="(max-width: 768px) 100vw, (min-width: 769px) 1024px"
                     />
