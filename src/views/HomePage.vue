@@ -273,16 +273,25 @@
             const dashOffset = computed(() => circumference * (1 - progress.value / 100))
 
             onMounted(() => {
-                const interval = setInterval(() => {
-                    if (progress.value < 100) {
-                        progress.value += 5
-                    }
-                }, 100) // cada 100ms sube 5%, en 2 segundos llega a 100%
-
-                setTimeout(() => {
+                const isGooglebot = /Googlebot|Google-InspectionTool/.test(navigator.userAgent)
+                
+                if (isGooglebot) {
+                    // Mostrar contenido inmediatamente para Google
                     isLoading.value = false
-                    clearInterval(interval)
-                }, 2000) // 2 segundos
+                    progress.value = 100
+                } else {
+                    // Animación para usuarios reales
+                    const interval = setInterval(() => {
+                        if (progress.value < 100) {
+                            progress.value += 5
+                        }
+                    }, 100)
+
+                    setTimeout(() => {
+                        isLoading.value = false
+                        clearInterval(interval)
+                    }, 2000)
+                }
             })
 
             const activeSection = ref('home')
