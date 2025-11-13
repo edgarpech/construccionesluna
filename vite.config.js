@@ -12,6 +12,7 @@ const dynamicRoutes = [
     '/proyectos/fachada',
     '/proyectos/muebles',
     '/proyectos/jardin',
+    '/proyectos/residencia',
 ];
 
 // https://vite.dev/config/

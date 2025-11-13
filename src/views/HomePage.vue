@@ -54,7 +54,7 @@
             <!-- Contenido scrollable -->
             <div class="relative z-10 space-y-1">
                 <section id="home" ref="home" class="min-h-lvh flex flex-col items-center justify-center text-center space-y-18 px-6 md:px-28 lg:px-28 xl:px-36">
-                    <p class="text-center text-lg md:text-2xl lg:text-2xl xl:text-2xl font-medium text-[#333333]">PROYECTO, DISEÑO Y <br> CONSTRUCCIÓN</p>
+                    <p class="text-center text-lg md:text-2xl lg:text-2xl xl:text-2xl font-medium text-[#333333]">CONSTRUCCIONES Y <br> PROYECTOS LUNA</p>
                     <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-center text-[#333333] tracking-wide">
                         MANTENIMIENTO Y <br>ACABADOS LUNA
                     </h1>
@@ -184,8 +184,9 @@
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Conkal/enconstruccion.webp" 
-                            title="CONKAL"
+                            imageSrc="/images/projects/Residencia/Residencia 9.webp"
+                            title="RESIDENCIA PARTICULAR"
+                            projectUrl="/proyectos/residencia"
                             :alternate="true"
                         />
                         
@@ -258,7 +259,8 @@
         </div>
         <!-- Footer con el desarrollador (solo visible al final) -->
         <div v-if="showDeveloper" class="fixed bottom-0 left-0 z-50 p-4 text-[10px] text-[#333333] opacity-80 transition-opacity duration-300">
-            Desarrollado por Edgar Pech
+            Desarrollado por
+            <a href="https://edgarpech.netlify.app/" target="_blank" class="hover:underline">Edgar Pech</a>
         </div>
     </div>
 </template>
