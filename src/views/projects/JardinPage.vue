@@ -7,7 +7,7 @@
 
         <!-- Botón "Volver al inicio" -->
         <div @click="$router.push('/')" class="relative md:fixed top-20 left-5 z-50 text-white text-xs leading-tight font-normal uppercase text-left cursor-pointer group">
-            <font-awesome-icon icon="arrow-left" size="xl" class="w-8 h-8 text-white mr-2 transition-all duration-300 group-hover:-translate-x-1" />
+            <font-awesome-icon icon="arrow-left" size="lg" class="w-7 h-7 text-white mr-1 transition-all duration-300 group-hover:-translate-x-1" />
             <span class="transition-all duration-300 group-hover:underline">Volver al inicio</span>
         </div>
 
@@ -15,7 +15,7 @@
             <section class="min-h-screen flex flex-col justify-center px-10 md:px-32 lg:px-48 xl:px-60 pt-20 mt-10">
                 <!-- Título principal -->
                 <p class="text-left text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extralight text-white mb-12 tracking-wide">
-                    ELEVADOR DE EDIFICIO COMERCIAL
+                    JARDÍN Y MURO DE LAVAMANOS <br> INFANTIL
                 </p>
 
                 <!-- Información del proyecto -->
@@ -26,7 +26,7 @@
                             <font-awesome-icon icon="calendar" class="text-white text-base opacity-80" />
                         </div>
                         <p class="text-xs md:text-sm text-white">
-                            26 DE ABRIL DEL 2020 - JUNIO DEL 2021
+                            SEPTIEMBRE DEL 2025 - OCTUBRE DEL 2025
                         </p>
                     </div>
 
@@ -36,7 +36,7 @@
                             <font-awesome-icon icon="map-marker-alt" class="text-white text-base opacity-80" />
                         </div>
                         <p class="text-xs md:text-sm text-white">
-                            JOSÉ MARÍA IZAZAGA 89, CENTRO, CUAUHTÉMOC, 06000 CIUDAD DE MÉXICO, CDMX.
+                            VENUSTIANO CARRANZA 1068, SANTIAGO YACUITLALPAN, 52766 HUIXQUILUCAN DE DEGOLLADO, MÉX.
                         </p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <!-- Descripción -->
                 <div class="w-full max-w-4xl text-left mt-8">
                     <ul class="text-sm md:text-base text-white list-disc pl-5">
-                        <li>DESPLANTE Y TERMINACIÓN DE ELEVADOR EN EDIFICIO COMERCIAL.</li>
+                        <li>REFORZAMIENTO DE MURO DE CONTENCIÓN Y ELABORACIÓN DE LAVAMANOS INFANTILES EN EL JARDÍN DE NIÑOS. GUSTAVO ADOLFO BECQUER</li>
                     </ul>
                 </div>
 
@@ -52,7 +52,7 @@
                 <div class="relative w-full h-96 md:h-[500px] mt-16 overflow-hidden group">
                     <div class="absolute inset-0 flex transition-transform duration-500 ease-out" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
                         <div v-for="(image, index) in galleryImages" :key="index" class="w-full h-full flex-shrink-0">
-                            <img loading="lazy" v-lazy="image" class="w-full h-full object-contain" alt="Elevador de Edificio Comercial en Ciudad de México">
+                            <img loading="lazy" v-lazy="image" class="w-full h-full object-contain" alt="Jardín y Muro de Lavamanos Infantil en México">
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@
                             'border-white scale-105': currentIndex === index,
                             'border-transparent opacity-80 hover:opacity-100': currentIndex !== index
                         }">
-                        <img loading="lazy" v-lazy="image" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" alt="Miniatura de Elevador de Edificio Comercial en Ciudad de México">
+                        <img loading="lazy" v-lazy="image" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110" alt="Miniatura de Reparación de Alberca en México">
                         <div v-if="currentIndex === index" class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
                             <div class="w-3 h-3 bg-white rounded-full"></div>
                         </div>
@@ -103,13 +103,16 @@ export default {
         return {
             currentIndex: 0,
             galleryImages: [
-                '/images/projects/Elevador/Elevador 1.webp',
-                '/images/projects/Elevador/Elevador 2.webp',
-                '/images/projects/Elevador/Elevador 3.webp',
-                '/images/projects/Elevador/Elevador 4.webp',
-                '/images/projects/Elevador/Elevador 5.webp',
-                '/images/projects/Elevador/Elevador 6.webp',
-                '/images/projects/Elevador/Elevador 7.webp',
+                '/images/projects/Jardin/jardin 1.webp',
+                '/images/projects/Jardin/jardin 2.webp',
+                '/images/projects/Jardin/jardin 3.webp',
+                '/images/projects/Jardin/jardin 4.webp',
+                '/images/projects/Jardin/jardin 5.webp',
+                '/images/projects/Jardin/jardin 6.webp',
+                '/images/projects/Jardin/jardin 7.webp',
+                '/images/projects/Jardin/jardin 8.webp',
+                '/images/projects/Jardin/jardin 9.webp',
+                '/images/projects/Jardin/jardin 10.webp',
             ]
         }
     },

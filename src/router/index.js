@@ -5,6 +5,7 @@ import CondominioPage from '../views/projects/CondominioPage.vue'
 import ElevadorPage from '../views/projects/ElevadorPage.vue'
 import FachadaPage from '../views/projects/FachadaPage.vue'
 import MueblesPage from '../views/projects/MueblesPage.vue'
+import JardinPage from '../views/projects/JardinPage.vue'
 import NotFoundPage from '../views/NotFoundPage.vue'
 
 const routes = [
@@ -42,6 +43,12 @@ const routes = [
     path: '/proyectos/muebles',
     name: 'muebles',
     component: MueblesPage,
+    meta: { transition: 'slide-up' }
+  },
+  {
+    path: '/proyectos/jardin',
+    name: 'jardin',
+    component: JardinPage,
     meta: { transition: 'slide-up' }
   },
   // Ruta para manejar 404

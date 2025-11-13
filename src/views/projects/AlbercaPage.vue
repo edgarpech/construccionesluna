@@ -1,7 +1,7 @@
 <template>
     <div class="relative text-white overflow-x-hidden scroll-smooth">
         <!-- Fondo fijo con overlay oscuro -->
-        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Edificio frente.webp');">
+        <div class="fixed inset-0 bg-cover bg-center z-0 h-lvh" style="background-image: url('/images/projects/Condominio/Condominio 5.webp');">
             <div class="absolute inset-0 bg-black opacity-85 h-lvh"></div>
         </div>
 
@@ -103,7 +103,14 @@ export default {
         return {
             currentIndex: 0,
             galleryImages: [
-                '/images/projects/Alberca/Ampliación alberca.webp'
+                '/images/projects/Alberca/Alberca 1.webp',
+                '/images/projects/Alberca/Alberca 2.webp',
+                '/images/projects/Alberca/Alberca 3.webp',
+                '/images/projects/Alberca/Alberca 4.webp',
+                '/images/projects/Alberca/Alberca 5.webp',
+                '/images/projects/Alberca/Alberca 6.webp',
+                '/images/projects/Alberca/Alberca 7.webp',
+                '/images/projects/Alberca/Alberca 8.webp'
             ]
         }
     },

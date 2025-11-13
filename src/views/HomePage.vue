@@ -142,21 +142,21 @@
                     <!-- Lista de proyectos alternados -->
                     <div class="space-y-40 px-6 md:px-16 lg:px-30 xl:px-30">
                         <ProjectCard 
-                            imageSrc="/images/projects/Alberca/Ampliación alberca.webp" 
+                            imageSrc="/images/projects/Alberca/Alberca 1.webp" 
                             title="ALBERCA HACIENDA DE LAS PALMAS"
                             projectUrl="/proyectos/alberca"
                             :alternate="true"
                         />
                         
                         <ProjectCard 
-                            imageSrc="/images/projects/Condominio/Edificio en construccion 3.webp" 
+                            imageSrc="/images/projects/Condominio/Condominio 3.webp" 
                             title="CONDOMINIO SANTA CLARA"
                             projectUrl="/proyectos/condominio"
                             :alternate="false"
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Elevador/Elevador en proceso.webp" 
+                            imageSrc="/images/projects/Elevador/Elevador 5.webp" 
                             title="ELEVADOR DE EDIFICIO COMERCIAL"
                             projectUrl="/proyectos/elevador"
                             :alternate="true"
@@ -170,15 +170,16 @@
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Muebles/Muebles cocina.webp" 
+                            imageSrc="/images/projects/Muebles/Muebles 5.webp" 
                             title="MUEBLES BOSQUE DE RADIATAS 26"
                             projectUrl="/proyectos/muebles"
                             :alternate="true"
                         />
 
                         <ProjectCard 
-                            imageSrc="/images/projects/Hotel/enconstruccion.webp" 
-                            title="HOTEL SANTA CLARA"
+                            imageSrc="/images/projects/Jardin/jardin 10.webp" 
+                            title="MURO Y LAVAMANOS INFANTIL"
+                            projectUrl="/proyectos/jardin"
                             :alternate="false"
                         />
 
